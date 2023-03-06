@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://btflucpwhbab2"]
+
+[ext_resource type="Script" path="res://Nodes/start.gd" id="1_gw07l"]
+[ext_resource type="PackedScene" uid="uid://flprrxrxr5lf" path="res://background.tscn" id="2_83hsv"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_gw07l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" parent="CanvasLayer" instance=ExtResource("2_83hsv")]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 2.08165e-12)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center][b]EvoSimulation[/b][/center]"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(130, 2.08165e-12)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Options[/center]"
+fit_content = true
+
+[node name="Maxes" type="GridContainer" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer/Maxes"]
+custom_minimum_size = Vector2(130, 2.08165e-12)
+layout_mode = 2
+text = "Max Producer1:"
+fit_content = true
+
+[node name="max_creator1" type="SpinBox" parent="CanvasLayer/CenterContainer/VBoxContainer/Maxes"]
+layout_mode = 2
+max_value = 3000.0
+value = 1500.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer/Maxes"]
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+text = "Max Consumer1:"
+fit_content = true
+
+[node name="max_consumer1" type="SpinBox" parent="CanvasLayer/CenterContainer/VBoxContainer/Maxes"]
+layout_mode = 2
+max_value = 600.0
+value = 300.0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer/Maxes"]
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+text = "Max Consumer2:"
+fit_content = true
+
+[node name="max_consumer2" type="SpinBox" parent="CanvasLayer/CenterContainer/VBoxContainer/Maxes"]
+layout_mode = 2
+max_value = 300.0
+value = 150.0
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+
+[node name="Start" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 240.0
+offset_bottom = -8.0
+grow_vertical = 0
+text = "v0.0.1, by MeniMato"

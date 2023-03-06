@@ -1,0 +1,1688 @@
+[gd_scene load_steps=4 format=3 uid="uid://bow7r3mj3saa0"]
+
+[ext_resource type="Script" path="res://Nodes/main.gd" id="1_ms0nb"]
+[ext_resource type="Script" path="res://Nodes/BrainInspector.gd" id="2_25m7e"]
+[ext_resource type="PackedScene" uid="uid://flprrxrxr5lf" path="res://background.tscn" id="2_g2csp"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ms0nb")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" parent="CanvasLayer2" instance=ExtResource("2_g2csp")]
+
+[node name="all_creator_1" type="Node2D" parent="."]
+
+[node name="all_consumer_1" type="Node2D" parent="."]
+
+[node name="all_consumer_2" type="Node2D" parent="."]
+
+[node name="ShowingBrain" type="Node2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="ShowingBrain"]
+color = Color(1, 0.4, 0.466667, 1)
+polygon = PackedVector2Array(-16, -24, -16, -8, -4, -8, 0, 0, 4, -8, 16, -8, 16, -24)
+
+[node name="Label" type="Label" parent="ShowingBrain"]
+offset_left = -13.0
+offset_top = -25.0
+offset_right = 27.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 12
+text = "Hey!"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 208.0
+offset_bottom = 600.0
+
+[node name="UI" type="CheckButton" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 47.0
+button_pressed = true
+text = "Show Controls"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 198.0
+offset_bottom = 530.0
+mouse_filter = 0
+
+[node name="FPS" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(170, 2.08165e-12)
+layout_mode = 2
+text = "fgb
+gv
+dfvfg
+,jk"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="title1" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(70, 2.08165e-12)
+layout_mode = 2
+text = "Click to:"
+fit_content = true
+
+[node name="ToggleButtons" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="add_producer1" type="CheckButton" parent="CanvasLayer/VBoxContainer/ToggleButtons"]
+layout_mode = 2
+text = "Add Producer1"
+
+[node name="add_consumer1" type="CheckButton" parent="CanvasLayer/VBoxContainer/ToggleButtons"]
+layout_mode = 2
+text = "Add Consumer1"
+
+[node name="add_consumer2" type="CheckButton" parent="CanvasLayer/VBoxContainer/ToggleButtons"]
+layout_mode = 2
+text = "Add Consumer2"
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="title2" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+text = "Multiple Random Spawns"
+fit_content = true
+
+[node name="GeneralSpawn" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpawnProducer1" type="Button" parent="CanvasLayer/VBoxContainer/GeneralSpawn"]
+layout_mode = 2
+text = "Spawn Producer1"
+
+[node name="SpawnConsumer1" type="Button" parent="CanvasLayer/VBoxContainer/GeneralSpawn"]
+layout_mode = 2
+text = "Spawn Consumer1"
+
+[node name="SpawnConsumer2" type="Button" parent="CanvasLayer/VBoxContainer/GeneralSpawn"]
+layout_mode = 2
+text = "Spawn Consumer2"
+
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="title3" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 2.08165e-12)
+layout_mode = 2
+text = "Miscelaneous"
+fit_content = true
+
+[node name="Misc" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ToggleGen" type="CheckButton" parent="CanvasLayer/VBoxContainer/Misc"]
+layout_mode = 2
+text = "Show Generation"
+
+[node name="show_brain" type="CheckButton" parent="CanvasLayer/VBoxContainer/Misc"]
+layout_mode = 2
+text = "Inspect Brain"
+
+[node name="Back" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Back to Start"
+
+[node name="Inspector" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -431.0
+offset_top = 15.0
+offset_right = -21.0
+offset_bottom = 576.0
+grow_horizontal = 0
+mouse_filter = 1
+script = ExtResource("2_25m7e")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Inspector"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 569.0
+offset_right = 409.0
+offset_bottom = 649.0
+
+[node name="Generation" type="RichTextLabel" parent="CanvasLayer/Inspector"]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 569.0
+offset_right = 417.0
+offset_bottom = 592.0
+text = "Generation:"
+fit_content = true
+
+[node name="Lifetime" type="RichTextLabel" parent="CanvasLayer/Inspector"]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 596.0
+offset_right = 417.0
+offset_bottom = 619.0
+text = "Lifetime:"
+fit_content = true
+
+[node name="Food" type="RichTextLabel" parent="CanvasLayer/Inspector"]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 623.0
+offset_right = 417.0
+offset_bottom = 646.0
+text = "Food:"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Inspector"]
+layout_mode = 0
+offset_right = 410.0
+offset_bottom = 535.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Inspector/VBoxContainer"]
+layout_mode = 2
+
+[node name="padding_5" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 22)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0)
+
+[node name="NodeName" type="RichTextLabel" parent="CanvasLayer/Inspector/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Click to inspect"
+fit_content = true
+scroll_active = false
+
+[node name="NodeName2" type="RichTextLabel" parent="CanvasLayer/Inspector/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "   Brain Connections"
+fit_content = true
+scroll_active = false
+
+[node name="Layers" type="GridContainer" parent="CanvasLayer/Inspector/VBoxContainer"]
+layout_mode = 2
+columns = 7
+
+[node name="padding_1" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers"]
+custom_minimum_size = Vector2(10, 22)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0)
+
+[node name="Input" type="VBoxContainer" parent="CanvasLayer/Inspector/VBoxContainer/Layers"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="padding_1" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 5)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="01" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/01"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="02" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/02"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="03" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/03"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="04" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/04"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="05" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/05"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="06" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/06"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="07" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/07"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="08" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/08"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="09" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/09"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="10" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/10"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="11" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/11"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="12" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/12"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="13" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/13"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="14" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/14"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="15" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/15"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="16" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/16"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="17" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/17"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="18" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/18"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="19" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input/19"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="padding_2" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Input"]
+custom_minimum_size = Vector2(22, 5)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_2" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0)
+
+[node name="Hidden" type="VBoxContainer" parent="CanvasLayer/Inspector/VBoxContainer/Layers"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="padding_1" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_2" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_3" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_4" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_5" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="01" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden/01"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="02" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden/02"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="03" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden/03"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="04" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden/04"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="05" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden/05"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="06" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden/06"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="07" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden/07"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="08" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Hidden/08"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="padding_3" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0)
+
+[node name="Output" type="VBoxContainer" parent="CanvasLayer/Inspector/VBoxContainer/Layers"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="padding_2" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_3" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_4" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_5" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_6" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_7" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_8" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="padding_9" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="01" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output/01"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="02" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="value" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers/Output/02"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="padding_4" type="ColorRect" parent="CanvasLayer/Inspector/VBoxContainer/Layers"]
+custom_minimum_size = Vector2(10, 22)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0)
+
+[node name="C1" type="Node2D" parent="CanvasLayer/Inspector"]
+position = Vector2(0, 54)
+
+[node name="I1" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I1"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 19)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I1"]
+points = PackedVector2Array(36, 20, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I1"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36, 20, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I1"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36, 20, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I1"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36, 20, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I1"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36, 20, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I1"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36, 20, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I1"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36, 20, 195, 323)
+width = 1.0
+
+[node name="I2" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I2"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 45)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I2"]
+points = PackedVector2Array(36, 46, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I2"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 46, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I2"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 46, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I2"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 46, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I2"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 46, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I2"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 46, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I2"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 46, 195, 323)
+width = 1.0
+
+[node name="I3" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I3"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 71)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I3"]
+points = PackedVector2Array(36, 72, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I3"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 72, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I3"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 72, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I3"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 72, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I3"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 72, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I3"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 72, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I3"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 72, 195, 323)
+width = 1.0
+
+[node name="I4" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I4"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 97)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I4"]
+points = PackedVector2Array(36, 98, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I4"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 98, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I4"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 98, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I4"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 98, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I4"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 98, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I4"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 98, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I4"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 98, 195, 323)
+width = 1.0
+
+[node name="I5" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I5"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 123)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I5"]
+points = PackedVector2Array(36, 124, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I5"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 124, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I5"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 124, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I5"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 124, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I5"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 124, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I5"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 124, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I5"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 124, 195, 323)
+width = 1.0
+
+[node name="I6" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I6"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 149)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I6"]
+points = PackedVector2Array(36, 150, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I6"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 150, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I6"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 150, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I6"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 150, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I6"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 150, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I6"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 150, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I6"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 150, 195, 323)
+width = 1.0
+
+[node name="I7" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I7"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 175)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I7"]
+points = PackedVector2Array(36, 176, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I7"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 176, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I7"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 176, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I7"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 176, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I7"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 176, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I7"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 176, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I7"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 176, 195, 323)
+width = 1.0
+
+[node name="I8" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I8"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 201)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I8"]
+points = PackedVector2Array(36, 202, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I8"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 202, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I8"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 202, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I8"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 202, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I8"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 202, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I8"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 202, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I8"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 202, 195, 323)
+width = 1.0
+
+[node name="I9" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I9"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 227)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I9"]
+points = PackedVector2Array(36, 228, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I9"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 228, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I9"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 228, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I9"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 228, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I9"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 228, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I9"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 228, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I9"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 228, 195, 323)
+width = 1.0
+
+[node name="I10" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I10"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 253)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I10"]
+points = PackedVector2Array(36, 254, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I10"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 254, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I10"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 254, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I10"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 254, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I10"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 254, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I10"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 254, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I10"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 254, 195, 323)
+width = 1.0
+
+[node name="I11" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I11"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 279)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I11"]
+points = PackedVector2Array(36, 280, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I11"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 280, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I11"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 280, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I11"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 280, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I11"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 280, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I11"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 280, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I11"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 280, 195, 323)
+width = 1.0
+
+[node name="I12" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I12"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 305)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I12"]
+points = PackedVector2Array(36, 306, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I12"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 306, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I12"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 306, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I12"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 306, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I12"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 306, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I12"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 306, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I12"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 306, 195, 323)
+width = 1.0
+
+[node name="I13" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I13"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 331)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I13"]
+points = PackedVector2Array(36, 332, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I13"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 332, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I13"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 332, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I13"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 332, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I13"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 332, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I13"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 332, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I13"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 332, 195, 323)
+width = 1.0
+
+[node name="I14" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I14"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 357)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I14"]
+points = PackedVector2Array(36, 358, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I14"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 358, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I14"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 358, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I14"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 358, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I14"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 358, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I14"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 358, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I14"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 358, 195, 323)
+width = 1.0
+
+[node name="I15" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I15"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 383)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I15"]
+points = PackedVector2Array(36, 384, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I15"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 384, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I15"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 384, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I15"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 384, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I15"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 384, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I15"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 384, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I15"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 384, 195, 323)
+width = 1.0
+
+[node name="I16" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I16"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 409)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I16"]
+points = PackedVector2Array(36, 410, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I16"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 410, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I16"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 410, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I16"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 410, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I16"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 410, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I16"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 410, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I16"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 410, 195, 323)
+width = 1.0
+
+[node name="I17" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I17"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 435)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I17"]
+points = PackedVector2Array(36, 436, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I17"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 436, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I17"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 436, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I17"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 436, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I17"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 436, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I17"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 436, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I17"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 436, 195, 323)
+width = 1.0
+
+[node name="I18" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I18"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 461)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I18"]
+points = PackedVector2Array(36, 462, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I18"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 462, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I18"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 462, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I18"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 462, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I18"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 462, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I18"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 462, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I18"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 462, 195, 323)
+width = 1.0
+
+[node name="I19" type="Node2D" parent="CanvasLayer/Inspector/C1"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C1/I19"]
+position = Vector2(4, 1)
+points = PackedVector2Array(190, 140, 32, 487)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C1/I19"]
+points = PackedVector2Array(36, 488, 194, 168)
+width = 1.0
+
+[node name="03" type="Line2D" parent="CanvasLayer/Inspector/C1/I19"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 488, 195, 193)
+width = 1.0
+
+[node name="04" type="Line2D" parent="CanvasLayer/Inspector/C1/I19"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 488, 195, 219)
+width = 1.0
+
+[node name="05" type="Line2D" parent="CanvasLayer/Inspector/C1/I19"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 488, 195, 245)
+width = 1.0
+
+[node name="06" type="Line2D" parent="CanvasLayer/Inspector/C1/I19"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 488, 195, 271)
+width = 1.0
+
+[node name="07" type="Line2D" parent="CanvasLayer/Inspector/C1/I19"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 488, 195, 297)
+width = 1.0
+
+[node name="08" type="Line2D" parent="CanvasLayer/Inspector/C1/I19"]
+position = Vector2(0.21875, 0)
+scale = Vector2(0.99375, 1)
+points = PackedVector2Array(36.0063, 488, 195, 323)
+width = 1.0
+
+[node name="C2" type="Node2D" parent="CanvasLayer/Inspector"]
+position = Vector2(0, 54)
+
+[node name="H1" type="Node2D" parent="CanvasLayer/Inspector/C2"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C2/H1"]
+points = PackedVector2Array(216, 141, 374, 219)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C2/H1"]
+points = PackedVector2Array(216, 141, 374, 245)
+width = 1.0
+
+[node name="H2" type="Node2D" parent="CanvasLayer/Inspector/C2"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C2/H2"]
+points = PackedVector2Array(216, 168, 374, 219)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C2/H2"]
+points = PackedVector2Array(216, 168, 374, 245)
+width = 1.0
+
+[node name="H3" type="Node2D" parent="CanvasLayer/Inspector/C2"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C2/H3"]
+points = PackedVector2Array(216, 193, 374, 219)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C2/H3"]
+points = PackedVector2Array(216, 193, 374, 245)
+width = 1.0
+
+[node name="H4" type="Node2D" parent="CanvasLayer/Inspector/C2"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C2/H4"]
+points = PackedVector2Array(216, 220, 374, 219)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C2/H4"]
+points = PackedVector2Array(216, 220, 374, 245)
+width = 1.0
+
+[node name="H5" type="Node2D" parent="CanvasLayer/Inspector/C2"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C2/H5"]
+points = PackedVector2Array(216, 245, 374, 219)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C2/H5"]
+points = PackedVector2Array(216, 245, 374, 245)
+width = 1.0
+
+[node name="H6" type="Node2D" parent="CanvasLayer/Inspector/C2"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C2/H6"]
+points = PackedVector2Array(216, 271, 374, 219)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C2/H6"]
+points = PackedVector2Array(216, 271, 374, 245)
+width = 1.0
+
+[node name="H7" type="Node2D" parent="CanvasLayer/Inspector/C2"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C2/H7"]
+points = PackedVector2Array(216, 297, 374, 219)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C2/H7"]
+points = PackedVector2Array(216, 297, 374, 245)
+width = 1.0
+
+[node name="H8" type="Node2D" parent="CanvasLayer/Inspector/C2"]
+
+[node name="01" type="Line2D" parent="CanvasLayer/Inspector/C2/H8"]
+points = PackedVector2Array(216, 323, 374, 219)
+width = 1.0
+
+[node name="02" type="Line2D" parent="CanvasLayer/Inspector/C2/H8"]
+points = PackedVector2Array(216, 323, 374, 245)
+width = 1.0

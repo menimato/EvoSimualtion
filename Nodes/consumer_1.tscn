@@ -1,0 +1,169 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyaqa5qex7r0t"]
+
+[ext_resource type="Script" path="res://Nodes/consumer.gd" id="1_nuy00"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxspl"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqvwc"]
+size = Vector2(5, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udadi"]
+size = Vector2(11.6799, 13.9324)
+
+[node name="Consumer_1" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
+gravity_scale = 2.66454e-15
+script = ExtResource("1_nuy00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mxspl")
+
+[node name="Rays" type="Node2D" parent="."]
+
+[node name="RayCast2D_01" type="RayCast2D" parent="Rays"]
+rotation = -1.5708
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_02" type="RayCast2D" parent="Rays"]
+rotation = -1.74533
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_03" type="RayCast2D" parent="Rays"]
+rotation = -1.91986
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_04" type="RayCast2D" parent="Rays"]
+rotation = -2.0944
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_05" type="RayCast2D" parent="Rays"]
+rotation = -2.26893
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_06" type="RayCast2D" parent="Rays"]
+rotation = -2.44346
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_07" type="RayCast2D" parent="Rays"]
+rotation = -2.61799
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_08" type="RayCast2D" parent="Rays"]
+rotation = -2.79253
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_09" type="RayCast2D" parent="Rays"]
+rotation = -2.96706
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_10" type="RayCast2D" parent="Rays"]
+rotation = -3.14159
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_11" type="RayCast2D" parent="Rays"]
+rotation = 2.96706
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_12" type="RayCast2D" parent="Rays"]
+rotation = 2.79253
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_13" type="RayCast2D" parent="Rays"]
+rotation = 2.61799
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_14" type="RayCast2D" parent="Rays"]
+rotation = 2.44346
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_15" type="RayCast2D" parent="Rays"]
+rotation = 2.26893
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_16" type="RayCast2D" parent="Rays"]
+rotation = 2.0944
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_17" type="RayCast2D" parent="Rays"]
+rotation = 1.91986
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_18" type="RayCast2D" parent="Rays"]
+rotation = 1.74533
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="RayCast2D_19" type="RayCast2D" parent="Rays"]
+rotation = 1.5708
+target_position = Vector2(2.08165e-12, -50)
+collision_mask = 5
+
+[node name="mouth" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouth"]
+position = Vector2(2.08165e-12, 3.85628)
+shape = SubResource("RectangleShape2D_yqvwc")
+
+[node name="TimerLife" type="Timer" parent="."]
+
+[node name="TimerReproduce" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.150999, -2.3432)
+shape = SubResource("RectangleShape2D_udadi")
+
+[node name="Contour" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(0, -2.66667)
+scale = Vector2(1, 1.66667)
+polygon = PackedVector2Array(-5, -1.4, 0, -4.4, 5, -1.4, 6, 1.6, 3, 4, 0, 4.6, -3, 4, -6, 1.6)
+
+[node name="Body" type="Polygon2D" parent="."]
+color = Color(0.4, 0.513726, 0.976471, 1)
+polygon = PackedVector2Array(-4, -4, 2.08165e-12, -9, 4, -4, 5, 2.08165e-12, 2, 3.5, 2.08165e-12, 4, -2, 3.5, -5, 2.08165e-12)
+
+[node name="eye_1" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-2, -1, 0, 1, -2, 3, -4, 1)
+
+[node name="eye_2" type="Polygon2D" parent="."]
+position = Vector2(4, -1)
+scale = Vector2(1, 1.5)
+polygon = PackedVector2Array(-2, 0, 0, 1.33333, -2, 2.66667, -4, 1.33333)
+
+[node name="GenCounter" type="Label" parent="."]
+visible = false
+offset_left = 20.0904
+offset_top = -1.18203
+offset_right = 60.0904
+offset_bottom = 18.818
+rotation = 3.14159
+theme_override_font_sizes/font_size = 12
+text = "Test"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="mouth" to="." method="_on_mouth_body_entered"]
+[connection signal="timeout" from="TimerLife" to="." method="_on_timer_life_timeout"]
+[connection signal="timeout" from="TimerReproduce" to="." method="_on_timer_reproduce_timeout"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

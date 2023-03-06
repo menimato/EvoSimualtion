@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6dwnsjmwkhsh"]
+
+[ext_resource type="Script" path="res://Nodes/producer.gd" id="1_13jfh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nexwt"]
+radius = 4.0
+
+[node name="producer_1" type="RigidBody2D"]
+collision_mask = 7
+gravity_scale = 2.66454e-15
+linear_damp = 10.0
+script = ExtResource("1_13jfh")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0.686275, 0.262745, 1)
+polygon = PackedVector2Array(3, -3, 4, 0, 3, 3, 0, 4, -3, 3, -4, 0, -3, -3, 0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nexwt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0

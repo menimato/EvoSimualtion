@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="EvoSimulation"
+run/main_scene="res://Nodes/start.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+run/max_fps=30
+config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalScript="*res://Nodes/GlobalScript.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=3
+window/dpi/allow_hidpi=false
+
+[editor]
+
+movie_writer/mjpeg_quality=0.95
+movie_writer/movie_file="/Users/bruno.matosak/Documents/Godot/Movies/test.avi"
+movie_writer/fps=30
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[physics]
+
+common/physics_ticks_per_second=30
+common/max_physics_steps_per_frame=4
+2d/solver/solver_iterations=8
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.831373, 0.831373, 0.831373, 1)
